@@ -27,6 +27,7 @@ class TestMetaClassIttrMultiplayer(object):
                     'attr_two'))
         ok_(hasattr(self.test_class.test_method_8_val_a_val_b_val_c,
                     'attr_three'))
+
     @attr(id=2)
     def test_ittr_attribute_insertion(self):
         """
@@ -38,6 +39,7 @@ class TestMetaClassIttrMultiplayer(object):
                   self.test_class.test_method_8_val_a_val_b_val_c.ittr)
         assert_in('attr_three',
                   self.test_class.test_method_8_val_a_val_b_val_c.ittr)
+
     @attr(id=3)
     def test_self_modification_by_test_method(self):
         """
@@ -121,11 +123,9 @@ class my_meta_class(object):
         """Test method docstring"""
         pass
 
-
     @ittr(attr_one=['val_a'])
     def test_method_6(self):
         pass
-
 
     @ittr(attr_one=['val_a', 'val_b'], attr_two=['val_c'])
     @attr(id=1234, section='test')
@@ -135,24 +135,22 @@ class my_meta_class(object):
     @ittr(attr_one=['val_a'], attr_two=['val_b'])
     @ittr(attr_three=['val_c', 'val_d'])
     def test_method_8(self):
-        """test method docstring"""
+        """Test method docstring"""
         pass
-
 
     @ittr(attr_one=['val_a', 'val_b'], attr_two=['val_c'])
     @ittr(attr_one=['val_e', 'val_d'])
     def test_method_9(self):
-        """test method docstring"""
+        """Test method docstring"""
         pass
-
 
     @ittr(attr_one=['val_a'], attr_two=['val_b'])
     @ittr(attr_one=['val_c'], attr_four=['val_d'])
     def test_method_10(self):
-        """test method docstring"""
+        """Test method docstring"""
         pass
 
     @ittr(attr_one=['val_a'+string.punctuation])
     def test_method_11(self):
-        """test method docstring"""
+        """Test method docstring"""
         pass

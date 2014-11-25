@@ -53,8 +53,10 @@ class IttrMultiplayer(type):
                                 .translate(None, "[]'")
                                 .replace(',', '_'))
                 logging.debug('method suffix: {0}'.format(suffix))
+
                 # in case itts passed are empty
                 if not suffix:
+                    logging.debug('Empty suffix, product: {0}'.format(prod))
                     continue
                 new_func_name = attribute_Name + '_' + suffix
 
@@ -67,13 +69,14 @@ class IttrMultiplayer(type):
                 mirror_func.func_name = new_func_name
                 mirror_func.func_doc = attribute.func_doc
                 dct[new_func_name] = mirror_func
+
             # set no test flag to original test method
             attribute.__test__ = False
         return type.__new__(mcs, name, bases, dct)
 
     @classmethod
     def _attribute_injector(cls, func, **keywords):
-        def wrapper(*fargs, **fkeywords):
+        def injector(*fargs, **fkeywords):
             # transfer ittr and attr to self when called
             self = fargs[0]
             for name, value in keywords.iteritems():
@@ -82,7 +85,6 @@ class IttrMultiplayer(type):
 
         # transfers all attr and ittr to newfunc
         for name, value in keywords.iteritems():
-            setattr(wrapper, name, value)
-        setattr(wrapper, 'keywords', keywords)
-        # newfunc.keywords = keywords
-        return wrapper
+            setattr(injector, name, value)
+        setattr(injector, 'keywords', keywords)
+        return injector
