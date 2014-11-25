@@ -8,27 +8,6 @@ from nose.plugins.attrib import attr
 from nose_ittr import IttrMultiplayer, ittr
 
 
-class TestFoo(object):
-
-    __metaclass__ = IttrMultiplayer
-
-    def setup(self):
-        pass
-
-    def teardown(self):
-        pass
-
-    @ittr(number=[1, 2, 3, 4])
-    def test_even(self):
-        """test if number is even"""
-        assert_equal(self.number % 2, 0)
-
-
-    @ittr(numerator=[15, 6], denominator=[2, 3])
-    def test_no_remainder(self):
-        assert_equal(self.numerator % self.denominator, 0)
-
-
 class TestMetaClassIttrMultiplayer(object):
 
     def setup(self):
