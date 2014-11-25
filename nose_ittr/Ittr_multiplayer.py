@@ -31,14 +31,14 @@ class IttrMultiplayer(type):
     """
     def __new__(mcs, name, bases, dct):
 
-        for attributeName, attribute in dct.items():
+        for attribute_Name, attribute in dct.items():
             # if not a method continue
             if not type(attribute) == FunctionType:
-                logging.debug('attribute {0} is not a method'.format(attributeName))
+                logging.debug('attribute {0} is not a method'.format(attribute_Name))
                 continue
             # is method decorated with platform attr
             if not hasattr(attribute, 'ittr') or not attribute.ittr:
-                logging.debug('method {0} has not attr decorator'.format(attributeName))
+                logging.debug('method {0} has not attr decorator'.format(attribute_Name))
                 continue
 
             # create product of all the iterators
@@ -56,9 +56,9 @@ class IttrMultiplayer(type):
                 # in case itts passed are empty
                 if not suffix:
                     continue
-                new_func_name = attributeName + '_' + suffix
+                new_func_name = attribute_Name + '_' + suffix
 
-                # combine both product and @ittr dict to be added to new method
+                # combine both product and ittr dict to be added to new method
                 func_params = dict(attribute.func_dict, **prod)
                 mirror_func = mcs._attribute_injector(attribute, **func_params)
                 setattr(mirror_func, 'ittr', prod)

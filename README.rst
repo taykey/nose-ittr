@@ -2,7 +2,7 @@ nose-ittr
 =========
 nose extension for supporting parametrized testing.
 ---------------------------------------------------
-Allow developer to run the same test over and over again using different values
+Allow developer to run the same test over and over again using different values.
 
 Main Features:
  * Very easy to integrate with existing tests.
@@ -10,7 +10,7 @@ Main Features:
  * Work with all nose plugins (including multiprocessing).
 
 Installation:
-------------
+-------------
 
 .. code-block:: shell
 
@@ -58,7 +58,7 @@ result:
 
 
 **notes:**
- * Doesn't affect setup
+ * Doesn't affect setup.
  * Doesn't affect test docstring if used with -v parameter.
 
 To change the docstring printout based on the varibales passed to test, use the plugin 
