@@ -28,7 +28,7 @@ long_description = read('README.rst', 'CHANGES.txt')
 
 setup(
     name='nose_ittr',
-    version='1.0',
+    version='0.0.1',
     url='https://github.com/taykey/nose-ittr',
     license='Apache Software License',
     author='Sergey Ragatsky',
