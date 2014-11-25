@@ -35,7 +35,6 @@ setup(
     author_email = "serg@taykey.com",
     tests_require=['nose'],
     install_requires=[''],
-    author_email='serg@taykey.com',
     description='nose expansion for supporting parametrized testing',
     long_description=long_description,
     packages=find_packages(),
