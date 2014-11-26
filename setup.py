@@ -4,6 +4,8 @@ import os
 import io
 from setuptools import setup, find_packages
 
+from nose_ittr.ittr_multiplayer import __version__
+
 here = os.path.abspath(os.path.dirname(__file__))
 
 # workaround for bug in python <= v2.7.3 when using nose.collector
@@ -28,7 +30,7 @@ long_description = read('README.rst', 'CHANGES.txt')
 
 setup(
     name='nose_ittr',
-    version='0.0.1',
+    version=__version__,
     url='https://github.com/taykey/nose-ittr',
     license='Apache Software License',
     author='Sergey Ragatsky',

@@ -1,3 +1,5 @@
 
-from nose_ittr.Ittr_multiplayer import IttrMultiplayer, ittr
+from nose_ittr.ittr_multiplayer import IttrMultiplayer, ittr, __version__
+
+
 

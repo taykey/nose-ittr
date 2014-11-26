@@ -1,4 +1,5 @@
 __author__ = 'Sergey Ragatsky'
+__version__ = '0.0.1'
 
 import re
 import logging
