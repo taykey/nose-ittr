@@ -38,7 +38,7 @@ setup(
     description='nose expansion for supporting parametrized testing',
     long_description=long_description,
     packages=find_packages(),
-    include_package_data=False,
+    include_package_data=True,
     platforms='any',
     keywords='nose nosetest docstring metaclass parametrized testing',
     test_suite='nose.collector',
