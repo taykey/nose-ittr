@@ -2,12 +2,12 @@ nose-ittr
 =========
 nose extension for supporting parametrized testing.
 ---------------------------------------------------
-Allow developer to run the same test over and over again using different values.
+Allows developer to run the same test over and over again using different values
 
 Main Features:
- * Very easy to integrate with existing tests.
- * Saves a lot of boilerplate code, and code replication.
- * Work with all nose plugins (including multiprocessing).
+ * Very easy to integrate with existing tests
+ * Saves a lot of boilerplate code, and code replication
+ * Work with all nose plugins (including multiprocessing)
 
 Installation:
 -------------
@@ -36,8 +36,7 @@ Basic usage:
             
         @ittr(number=[1, 2, 3, 4])
         def test_even(self):
-            assert_equal(self.number % 2, 0)
-            
+            assert_equal(self.number % 2, 0)            
         
         @ittr(numerator=[15, 6], denominator=[2, 3])
         def test_no_remainder(self):
@@ -57,7 +56,7 @@ result:
         TestFoo.test_no_remainder_3_15 ... .ok
 
 
-**notes:**
+**Notes:**
  * Doesn't affect setup.
  * Doesn't affect test docstring if used with -v parameter.
 
