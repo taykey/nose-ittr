@@ -37,6 +37,7 @@ class IttrMultiplayer(type):
             if not type(attribute) == FunctionType:
                 logging.debug('attribute {0} is not a method'.format(attribute_name))
                 continue
+
             # is method decorated with platform attr
             if not hasattr(attribute, 'ittr') or not attribute.ittr:
                 logging.debug('method {0} has not attr decorator'.format(attribute_name))
