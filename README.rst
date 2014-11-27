@@ -80,11 +80,13 @@ To change the docstring printout based on the varibales passed to test, use the 
 :Authors:
     Sergey Ragatsky 
 :Contributors: 
+    Niv Mizrahi
+
     Tal Ben Basat
-  
+
     Nicole Franco  
 
     Roy Klinger 
  
-    Maroun Maroun  
+    Maroun Maroun
 :Version: 0.0.2 of 27/11/2014
