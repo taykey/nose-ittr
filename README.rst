@@ -25,11 +25,11 @@ Basic usage:
     import math
 
     from nose.tools import assert_equal, assert_not_equal
-    from nose_ittr import IttrMultiplayer, ittr
+    from nose_ittr import IttrMultiplier, ittr
 
     class TestFoo(object):
         
-        __metaclass__ = IttrMultiplayer
+        __metaclass__ = IttrMultiplier
         
         def setup(self):
             if hasattr(self, 'value'):

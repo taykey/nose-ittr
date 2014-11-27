@@ -13,11 +13,17 @@ class SetupIttr(Plugin):
     name = 'setup-ittr'
 
     def beforeTest(self, test):
-        if hasattr(test.test.__dict__['test'], 'ittr'):
-            for key, value in test.test.__dict__['test'].ittr.iteritems():
-                setattr(test.context, key, value)
+        try:
+            if hasattr(test.test.__dict__['test'], 'ittr'):
+                for key, value in test.test.__dict__['test'].ittr.iteritems():
+                    setattr(test.context, key, value)
+        except KeyError:
+            return
 
     def afterTest(self, test):
-        if hasattr(test.test.__dict__['test'], 'ittr'):
-            for key, value in test.test.__dict__['test'].ittr.iteritems():
-                delattr(test.context, key)
+        try:
+            if hasattr(test.test.__dict__['test'], 'ittr'):
+                for key, value in test.test.__dict__['test'].ittr.iteritems():
+                    delattr(test.context, key)
+        except KeyError:
+            return
