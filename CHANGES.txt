@@ -9,4 +9,9 @@
 * Added nose plugin to the package
   to support setup customization per test
 
-* bug fix for when using new.classob
+0.0.3 (2014-11-27)
+------------------
+* error handling for nose plugin
+* typo fix
+* support using new.classob
+
