@@ -8,3 +8,5 @@
 ------------------
 * Added nose plugin to the package
   to support setup customization per test
+
+* bug fix for when using new.classob
