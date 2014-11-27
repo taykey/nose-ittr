@@ -23,6 +23,7 @@ Basic usage:
 .. code-block:: python
 
     import math
+
     from nose.tools import assert_equal, assert_not_equal
     from nose_ittr import IttrMultiplayer, ittr
 

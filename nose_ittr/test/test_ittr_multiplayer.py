@@ -17,7 +17,6 @@ class TestMetaClassIttrMultiplayer(object):
         pass
 
     @attr(id=1)
-    @ittr(pla=['fb', 'gdn'])
     def test_correct_mirroring(self):
         """
         Test metaclass set ittr attributes in mirrors functions

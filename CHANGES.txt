@@ -6,5 +6,5 @@
 
 0.0.2 (2014-11-27)
 ------------------
-* added nose plugin to the package
+* Added nose plugin to the package
   to support setup customization per test
