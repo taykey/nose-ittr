@@ -42,8 +42,9 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     platforms='any',
-    keywords='nose nosetest docstring metaclass parametrized testing',
+    keywords='nose nosetest docstring metaclass parametrized testing plugin',
     test_suite='nose.collector',
+    zip_safe=False,
     classifiers = [
         'Programming Language :: Python',
         'Development Status :: 4 - Beta',
@@ -56,4 +57,9 @@ setup(
         'Topic :: Software Development :: Libraries :: Application Frameworks',
         'Topic :: Software Development :: Testing',
         ],
+     entry_points={
+        'nose.plugins.0.10': [
+        'setup_ittr = nose_ittr.setup_ittr:SetupIttr'
+        ]
+    },
 )

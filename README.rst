@@ -8,6 +8,7 @@ Main Features:
  * Very easy to integrate with existing tests
  * Saves a lot of boilerplate code, and code replication
  * Work with all nose plugins (including multiprocessing)
+ * Customize setup per test, by using this package built-in nose plugin setup-ittr
 
 Installation:
 -------------
@@ -21,7 +22,9 @@ Basic usage:
 
 .. code-block:: python
 
-    from nose.tools import assert_equal
+    import math
+
+    from nose.tools import assert_equal, assert_not_equal
     from nose_ittr import IttrMultiplayer, ittr
 
     class TestFoo(object):
@@ -29,7 +32,8 @@ Basic usage:
         __metaclass__ = IttrMultiplayer
         
         def setup(self):
-            pass
+            if hasattr(self, 'value'):
+                self.value += 3
         
         def teardown(self):
             pass
@@ -41,7 +45,16 @@ Basic usage:
         @ittr(numerator=[15, 6], denominator=[2, 3])
         def test_no_remainder(self):
                 assert_equal(self.numerator % self.denominator, 0)
-                
+
+        @ittr(value=[4, 14])
+        def test_prime_with_custom_setup(self):
+            for i in range(3, int(math.sqrt(self.value))):
+                assert_not_equal(self.value % i, 0)
+
+.. code-block:: shell
+
+    nosetests --with-setup-ittr [for setup customization support]
+
 result:
                    
 .. code-block:: shell
@@ -54,10 +67,11 @@ result:
         TestFoo.test_no_remainder_2_15 ... FAIL
         TestFoo.test_no_remainder_3_6 ... .ok
         TestFoo.test_no_remainder_3_15 ... .ok
+        TestFoo.test_prime_with_custom_setup_14 ... ok
+        TestFoo.test_prime_with_custom_setup_4 ... ok
 
 
 **Notes:**
- * Doesn't affect setup.
  * Doesn't affect test docstring if used with -v parameter.
 
 To change the docstring printout based on the varibales passed to test, use the plugin 
@@ -73,4 +87,4 @@ To change the docstring printout based on the varibales passed to test, use the 
     Roy Klinger 
  
     Maroun Maroun  
-:Version: 1.0 of 25/11/2014 
+:Version: 0.0.2 of 27/11/2014
