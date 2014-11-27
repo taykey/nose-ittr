@@ -2,9 +2,9 @@ __author__ = 'Sergey'
 
 from nose.tools import ok_
 
-from nose_ittr import IttrMultiplier, ittr, class_ittr
+from nose_ittr import IttrMultiplier, ittr
 
-@class_ittr(plat=['FB', 'GDN'])
+
 class TestSetupIttr(object):
 
     __metaclass__ = IttrMultiplier

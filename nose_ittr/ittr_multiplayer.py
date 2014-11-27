@@ -25,7 +25,7 @@ def ittr(*args, **kwargs):
     return update_attr
 
 
-class IttrMultiplayer(type):
+class IttrMultiplier(type):
     """
     Multiples the tests in a given test class by
     the parameters given in ittr decorator.
