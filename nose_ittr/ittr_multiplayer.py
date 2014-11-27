@@ -32,6 +32,10 @@ class IttrMultiplayer(type):
     """
     def __new__(mcs, name, bases, dct):
 
+        # check if the class been multiplied by IttrMultiplier
+        if dct.get('is_multiplied'):
+            return type.__new__(mcs, name, bases, dct)
+
         for attribute_name, attribute in dct.items():
             # if not a method continue
             if not type(attribute) == FunctionType:
@@ -74,6 +78,8 @@ class IttrMultiplayer(type):
 
             # set no test flag to original test method
             attribute.__test__ = False
+        # mark has been multiplied
+        dct['is_multiplied'] = True  
         return type.__new__(mcs, name, bases, dct)
 
     @classmethod
