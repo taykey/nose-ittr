@@ -89,4 +89,3 @@ To change the docstring printout based on the varibales passed to test, use the 
     Roy Klinger 
  
     Maroun Maroun
-:Version: 0.0.2 of 27/11/2014
