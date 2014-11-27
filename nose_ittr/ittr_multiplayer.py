@@ -78,6 +78,7 @@ class IttrMultiplier(type):
 
             # set no test flag to original test method
             attribute.__test__ = False
+
         # mark has been multiplied
         dct['is_multiplied'] = True  
         return type.__new__(mcs, name, bases, dct)
