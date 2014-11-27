@@ -5,7 +5,7 @@ import string
 from nose.tools import nottest, ok_, assert_equal, assert_false, assert_in
 from nose.plugins.attrib import attr
 
-from nose_ittr import IttrMultiplayer, ittr
+from nose_ittr import IttrMultiplier, ittr
 
 
 class TestMetaClassIttrMultiplayer(object):
@@ -97,7 +97,7 @@ class TestMetaClassIttrMultiplayer(object):
 
 @nottest
 class my_meta_class(object):
-    __metaclass__ = IttrMultiplayer
+    __metaclass__ = IttrMultiplier
 
     @ittr(attr_one=[])
     def test_method_1(self):

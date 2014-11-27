@@ -2,12 +2,12 @@ __author__ = 'Sergey'
 
 from nose.tools import ok_
 
-from nose_ittr import IttrMultiplayer, ittr
+from nose_ittr import IttrMultiplier, ittr
 
 
 class TestSetupIttr(object):
 
-    __metaclass__ = IttrMultiplayer
+    __metaclass__ = IttrMultiplier
 
     def __init__(self):
         self.param_passed = False

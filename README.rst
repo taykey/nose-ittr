@@ -25,11 +25,11 @@ Basic usage:
     import math
 
     from nose.tools import assert_equal, assert_not_equal
-    from nose_ittr import IttrMultiplayer, ittr
+    from nose_ittr import IttrMultiplier, ittr
 
     class TestFoo(object):
         
-        __metaclass__ = IttrMultiplayer
+        __metaclass__ = IttrMultiplier
         
         def setup(self):
             if hasattr(self, 'value'):
@@ -80,11 +80,12 @@ To change the docstring printout based on the varibales passed to test, use the 
 :Authors:
     Sergey Ragatsky 
 :Contributors: 
+    Niv Mizrahi
+
     Tal Ben Basat
-  
+
     Nicole Franco  
 
     Roy Klinger 
  
-    Maroun Maroun  
-:Version: 0.0.2 of 27/11/2014
+    Maroun Maroun

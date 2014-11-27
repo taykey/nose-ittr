@@ -1,5 +1,5 @@
 __author__ = 'Sergey Ragatsky'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 import re
 import logging
@@ -25,7 +25,7 @@ def ittr(*args, **kwargs):
     return update_attr
 
 
-class IttrMultiplayer(type):
+class IttrMultiplier(type):
     """
     Multiples the tests in a given test class by
     the parameters given in ittr decorator.
