@@ -102,10 +102,10 @@ class TestMetaClassIttrMultiplayer(object):
     def test_class_decorator(self):
         ok_(hasattr(self.test_class_two, 'test_method_1_FB'))
         ok_(hasattr(self.test_class_two, 'test_method_1_GDN'))
-        ok_(hasattr(self.test_class_two, 'test_method_2_val_a_FB'))
-        ok_(hasattr(self.test_class_two, 'test_method_2_val_a_GDN'))
-        ok_(hasattr(self.test_class_two, 'test_method_2_val_b_FB'))
-        ok_(hasattr(self.test_class_two, 'test_method_2_val_b_GDN'))
+        ok_(hasattr(self.test_class_two, 'test_method_2_val_a_linux'))
+        ok_(hasattr(self.test_class_two, 'test_method_2_val_a_mac'))
+        ok_(hasattr(self.test_class_two, 'test_method_2_val_b_linux'))
+        ok_(hasattr(self.test_class_two, 'test_method_2_val_b_mac'))
 
 
 
@@ -114,7 +114,7 @@ class TestMetaClassIttrMultiplayer(object):
 class test_class_two(object):
 
     __metaclass__ = IttrMultiplier
-    __ittr__ = {'platform': ['FB', 'GDN']}
+    __ittr__ = {'os': ['linux', 'mac']}
 
     def test_method_1(self):
         """Test method docstring"""
