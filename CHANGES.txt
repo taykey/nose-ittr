@@ -15,3 +15,6 @@
 * typo fix
 * support using new.classob
 
+0.0.4 (2014-12-02)
+------------------
+* new feature, that allows decorating all class method with __ittr__ hook

@@ -4,7 +4,7 @@ import os
 import io
 from setuptools import setup, find_packages
 
-from nose_ittr.ittr_multiplayer import __version__
+from nose_ittr.ittr_multiplier import __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
 

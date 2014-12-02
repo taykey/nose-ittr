@@ -44,7 +44,7 @@ Basic usage:
         
         @ittr(numerator=[15, 6], denominator=[2, 3])
         def test_no_remainder(self):
-                assert_equal(self.numerator % self.denominator, 0)
+            assert_equal(self.numerator % self.denominator, 0)
 
         @ittr(value=[4, 14])
         def test_prime_with_custom_setup(self):
