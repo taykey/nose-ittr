@@ -1,5 +1,5 @@
 __author__ = 'Sergey Ragatsky'
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 
 import re
 import logging
@@ -42,6 +42,12 @@ class IttrMultiplier(type):
                 logging.debug('attribute {0} is not a method'.format(attribute_name))
                 continue
 
+            # combine class decorator hook if exist with test method attributes
+            try:
+                attribute = ittr(**dct.get('__ittr__', {}))(attribute)
+            except TypeError:
+                logging.error('Illegal __ittr__ type, dict expected')
+
             # is method decorated with platform attr
             if not hasattr(attribute, 'ittr') or not attribute.ittr:
                 logging.debug('method {0} has not attr decorator'.format(attribute_name))
@@ -80,7 +86,7 @@ class IttrMultiplier(type):
             attribute.__test__ = False
 
         # mark has been multiplied
-        dct['is_multiplied'] = True  
+        dct['is_multiplied'] = True
         return type.__new__(mcs, name, bases, dct)
 
     @classmethod
