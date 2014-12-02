@@ -43,7 +43,10 @@ class IttrMultiplier(type):
                 continue
 
             # combine class decorator hook if exist with test method attributes
-            attribute = ittr(**dct.get('__ittr__', {}))(attribute)
+            try:
+                attribute = ittr(**dct.get('__ittr__', {}))(attribute)
+            except TypeError:
+                logging.error('Illegal __ittr__ type, dict expected')
 
             # is method decorated with platform attr
             if not hasattr(attribute, 'ittr') or not attribute.ittr:

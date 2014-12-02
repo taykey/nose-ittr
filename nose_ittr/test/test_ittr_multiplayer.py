@@ -100,8 +100,8 @@ class TestMetaClassIttrMultiplayer(object):
 
     @attr(id=7)
     def test_class_decorator(self):
-        ok_(hasattr(self.test_class_two, 'test_method_1_FB'))
-        ok_(hasattr(self.test_class_two, 'test_method_1_GDN'))
+        ok_(hasattr(self.test_class_two, 'test_method_1_linux'))
+        ok_(hasattr(self.test_class_two, 'test_method_1_mac'))
         ok_(hasattr(self.test_class_two, 'test_method_2_val_a_linux'))
         ok_(hasattr(self.test_class_two, 'test_method_2_val_a_mac'))
         ok_(hasattr(self.test_class_two, 'test_method_2_val_b_linux'))
